@@ -1,5 +1,3 @@
-# vue-course-state
-
 ## Project setup
 ```
 npm install
