@@ -27,7 +27,7 @@ export default {
   methods: {
     async getAllPosts() {
       const res = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts?_limit=`
+        `https://jsonplaceholder.typicode.com/posts?_limit=10`
       );
       return res.data;
     },

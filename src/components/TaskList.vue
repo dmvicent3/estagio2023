@@ -10,20 +10,17 @@
         <v-skeleton-loader></v-skeleton-loader>
       </v-col>
     </v-row>
-    <FloatingActionButton />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import MyTask from "./MyTask.vue";
-import FloatingActionButton from "./FloatingActionButton.vue";
 
 export default {
   name: "TaskList",
   components: {
     MyTask,
-    FloatingActionButton,
   },
   computed: mapGetters(["loadTasks", "isFirstLoad", "isNextTasksLoading"]),
   methods: {

@@ -11,7 +11,7 @@
       src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
       cover
     >
-      <v-card-title>{{ post.id + ' - ' + post.title }}</v-card-title>
+      <v-card-title>{{ post.id + " - " + post.title }}</v-card-title>
     </v-img>
     <v-card-text>
       <div>{{ post.body }}</div>
@@ -51,18 +51,17 @@ export default {
       );
       return res.data;
     },
+    
     onScroll(entries) {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          console.log("Component " + this.post.id + " is visible");
-          setTimeout( async ()=>{
-            this.comments = await this.getPostComments();
+      if (this.comments.length < 1) {
 
-          },1000)
-        } else {
-          console.log("Component " + this.post.id + " is not visible");
-        }
-      });
+        entries.forEach(async (entry) => {
+          if (entry.isIntersecting) {
+            this.comments = await this.getPostComments();
+          }
+        });
+
+      }
     },
   },
   async created() {
